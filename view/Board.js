@@ -211,29 +211,32 @@ co.hardison.tictactoe.Board = Backbone.View.extend( {
 			x = target.data( 'x' ),
 			y = target.data( 'y' );
 
-		if ( this.status() == 'ok' ) {
-			// human move
-			this.makeMove( x, y );
-
-			// computer move
-			this.makeComputerMove();
-
-			switch ( this.status() ) {
-				case 'lose':
-					alert( 'You have won!' );
-					break;
-
-				case 'win':
-					alert( 'You have lost!' );
-					break;
-
-				case 'tie':
-					alert( 'Stalemate' );
-					break;
-			}
-		} else {
-			// reset
+		if ( this.status() != 'ok' ) {
+			// reset the board.
 			this.reset();
+			return;
+		}
+
+		if ( !this.makeMove( x, y ) ) {
+			// human move was not successful do not continue.
+			return;
+		}
+
+		// computer move
+		this.makeComputerMove();
+
+		switch ( this.status() ) {
+			case 'lose':
+				alert( 'You have won!' );
+				break;
+
+			case 'win':
+				alert( 'You have lost!' );
+				break;
+
+			case 'tie':
+				alert( 'Stalemate' );
+				break;
 		}
 	},
 

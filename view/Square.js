@@ -33,5 +33,5 @@ co.hardison.tictactoe.Square = Backbone.View.extend( {
 			this.$el.addClass( 'o' );
 			this.model.setSquare( this.x, this.y );
 		}
-	},
+	}
 } );
