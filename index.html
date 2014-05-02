@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>Alpha-Beta Minimax Tic-Tac-Toe</title>
+		<style>
+			body {
+				margin: 0;
+				margin-top: 50px;
+				font-family: "Arial";
+				background: #CFCFCF;
+			}
+
+			.x {
+				background-image: url( 'images/x.png' );
+				background-size: 200px 200px;
+			}
+
+			.o {
+				background-image: url( 'images/o.png' );
+				background-size: 200px 200px;
+			}
+
+			div.square {
+				display: inline-block;
+				box-sizing: border-box;
+				width: 200px;
+				height: 200px;
+				border-left: 1px solid #000000;
+				border-bottom: 1px solid #000000;
+			}
+
+			div.square.row-2 {
+				border-bottom: 0;
+			}
+
+			div.square.column-0 {
+				border-left: 0;
+			}
+
+			div.square {
+				cursor: pointer;
+			}
+
+			div.square.player {
+				cursor: default;
+			}
+
+			div.board {
+				margin: auto;
+				width: 640px;
+			}
+		</style>
+		<script type="application/javascript" src="lib/jquery.js"></script>
+		<script type="application/javascript" src="lib/underscore.js"></script>
+		<script type="application/javascript" src="lib/backbone.js"></script>
+        <script type="application/javascript" src="Game.js"></script>
+		<script type="application/javascript" src="model/Player.js"></script>
+		<script type="application/javascript" src="view/Square.js"></script>
+		<script type="application/javascript" src="view/Board.js"></script>
+        <script type="application/javascript">
+            var game;
+
+            $( document ).ready( function() {
+                game = new co.hardison.tictactoe.Game();
+                game.render();
+            } );
+        </script>
+	</head>
+	<body>
+
+	</body>
+</html>
